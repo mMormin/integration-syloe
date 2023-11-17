@@ -2,7 +2,7 @@ import Course from '../Course';
 
 function CoursesList() {
   return (
-    <ul>
+    <ul className="container">
       <Course />
     </ul>
   );

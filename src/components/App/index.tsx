@@ -1,11 +1,13 @@
+import StatusBar from '../StatusBar';
 import CoursesList from '../CoursesList';
-import Header from '../Header';
+import NavBar from '../NavBar';
 import './index.scss';
 
 function App() {
   return (
     <div className="app">
-      <Header />
+      <StatusBar />
+      <NavBar />
       <CoursesList />
     </div>
   );
