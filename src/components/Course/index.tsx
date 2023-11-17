@@ -1,13 +1,16 @@
+import { CourseT } from '../../@types';
 import './index.scss';
 
-function Course() {
+type CourseProps = {
+  course: CourseT;
+};
+
+function Course({ course }: CourseProps) {
   return (
-    <div className="course p-10">
+    <li className={`course p-10 bg-${course.color}`}>
       <div className="course-header">
-        <span className="course-header__date">today 5:30 PM</span>
-        <h3 className="course-header__title">
-          Yoga and Meditation for Beginners
-        </h3>
+        <span className="course-header__date">{course.date}</span>
+        <h3 className="course-header__title">{course.title}</h3>
       </div>
 
       <div className="course-entrants">
@@ -20,7 +23,7 @@ function Course() {
         </div>
         <p className="entrants__labels">join Marie, John & 10 others</p>
       </div>
-    </div>
+    </li>
   );
 }
 
