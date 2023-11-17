@@ -1,11 +1,7 @@
-import { CourseT } from '../../@types';
 import Course from '../Course';
+import courses from '../../data';
 
-type CoursesListProps = {
-  courses: CourseT[];
-};
-
-function CoursesList({ courses }: CoursesListProps) {
+function CoursesList() {
   return (
     <ul className="container">
       {courses.map((course) => (
