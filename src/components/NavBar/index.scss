@@ -1,39 +1,70 @@
 @use '../../styles/variables' as v;
 
 .header {
-  overflow-y: scroll;
-  position: relative;
-  z-index: 40;
-  top: 1.5rem;
+  .header-menu {
+    overflow-y: scroll;
+    position: relative;
+    z-index: 40;
+    top: 1.5rem;
 
-  .navbar {
-    border-radius: 0 0 0 5rem;
-    position: absolute;
+    &.active {
+      height: 100vh;
 
-    .navbar-link {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin: 0 2rem;
-      &__picture {
+      .navbar {
+        border-radius: 0;
+
+        flex-direction: column;
+        width: 100%;
+      }
+    }
+
+    .navbar {
+      border-radius: 0 0 0 5rem;
+
+      .navbar-link {
         display: flex;
-        justify-content: center;
+        flex-direction: column;
         align-items: center;
-        height: 60px;
-        border: 2px solid grey;
-        width: 60px;
-        background-color: white;
-        border-radius: 50%;
-        overflow: hidden;
+        margin: 0 2rem;
+
+        &__picture {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          height: 60px;
+          border: 2px solid rgb(143, 143, 143);
+          width: 60px;
+          background-color: white;
+          border-radius: 50%;
+          overflow: hidden;
+        }
+
+        &__icon {
+          color: rgb(143, 143, 143);
+          width: 23px;
+          height: 23px;
+        }
+
+        &__text {
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 0.7rem;
+          letter-spacing: 1px;
+          line-height: 0.7rem;
+          margin-top: 6px;
+        }
       }
 
-      &__text {
-        text-transform: uppercase;
-        font-weight: bold;
-        font-size: 0.7rem;
-        letter-spacing: 1px;
-        line-height: 0.7rem;
-        margin-top: 6px;
+      .active {
+        .navbar-link {
+          &__icon {
+            color: black;
+          }
+
+          &__picture {
+            border: 2px solid #e077a7;
+          }
+        }
       }
     }
   }
