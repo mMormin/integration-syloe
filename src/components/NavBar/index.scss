@@ -3,7 +3,8 @@
 .header {
   overflow-y: scroll;
   position: relative;
-  z-index: 100;
+  z-index: 40;
+  top: 1.5rem;
 
   .navbar {
     border-radius: 0 0 0 5rem;

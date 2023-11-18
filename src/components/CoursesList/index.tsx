@@ -4,8 +4,8 @@ import courses from '../../data';
 function CoursesList() {
   return (
     <ul className="container">
-      {courses.map((course) => (
-        <Course key={course.id} course={course} />
+      {courses.map((course, index) => (
+        <Course key={course.id} course={course} topOffset={index + 1} />
       ))}
     </ul>
   );
