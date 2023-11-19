@@ -4,6 +4,7 @@ import {
   BsHeadphones,
   BsFillTrophyFill,
   BsChevronDown,
+  BsXLg,
 } from 'react-icons/bs';
 import './index.scss';
 import { useState } from 'react';
@@ -15,13 +16,17 @@ interface NavbarLink {
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState<number | null>(null);
+  const [isActive, setIsActive] = useState<number>(1);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
   };
 
   const navbarLinks: NavbarLink[] = [
+    {
+      icon: <img src="https://i.pravatar.cc/300" alt="" />,
+      text: 'you',
+    },
     {
       icon: <BsArrowUpRight className="navbar-link__icon" />,
       text: 'trending',
@@ -41,13 +46,13 @@ function NavBar() {
   ];
 
   const handleClickMenu = (index: number) => {
-    setIsActive(index === isActive ? null : index);
+    setIsActive(index === isActive ? 1 : index);
   };
 
   return (
-    <header className="header ">
+    <header className="header relative">
       <div className={`header-menu h-40 ${isOpen ? 'active' : ''}`}>
-        <ul className="navbar flex flex-row justify-evenly items-center h-full px-10 bg-white absolute">
+        <ul className="navbar flex flex-row justify-evenly items-center h-full px-5 bg-white absolute">
           {navbarLinks.map((link, index) => (
             <li
               key={link.text}
@@ -60,12 +65,22 @@ function NavBar() {
             </li>
           ))}
         </ul>
+
+        {isOpen && (
+          <button
+            type="button"
+            className="close-icon absolute z-45 top-2 right-0 p-7"
+            onClick={handleToggleMenu}
+          >
+            <BsXLg className="w-5 h-5" />
+          </button>
+        )}
       </div>
-      <div className="header-button w-full z-40 relative">
+      <div className="open-icon w-full z-40 absolute bottom-2">
         <button
+          type="button"
           className="w-full flex justify-center"
           onClick={handleToggleMenu}
-          type="button"
         >
           <BsChevronDown />
         </button>

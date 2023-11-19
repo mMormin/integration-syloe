@@ -11,7 +11,7 @@ function Course({ course, topOffset }: CourseProps) {
     <li
       className={`course bg-${course.color}`}
       style={{
-        top: `calc(14.5rem * ${topOffset})`,
+        top: `calc(13.5rem * ${topOffset})`,
         zIndex: `calc(10 - ${topOffset})`,
       }}
     >

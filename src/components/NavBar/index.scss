@@ -1,25 +1,59 @@
 @use '../../styles/variables' as v;
 
 .header {
+  padding-top: 1.5rem;
+
   .header-menu {
     overflow-y: scroll;
     position: relative;
     z-index: 40;
-    top: 1.5rem;
+
+    .navbar > .navbar-link > button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+    }
 
     &.active {
       height: 100vh;
 
       .navbar {
         border-radius: 0;
-
         flex-direction: column;
         width: 100%;
+
+        .navbar-link {
+          width: 100%;
+
+          button {
+            width: 100%;
+          }
+
+          &__text {
+            margin-top: 1rem;
+            font-size: 0.8rem;
+          }
+
+          &.active {
+            .navbar-link {
+              &__picture {
+                height: 80px;
+                width: 80px;
+              }
+
+              &__icon {
+                width: 35px;
+                height: 35px;
+              }
+            }
+          }
+        }
       }
     }
 
     .navbar {
-      border-radius: 0 0 0 5rem;
+      border-radius: 0 0 0 6rem;
 
       .navbar-link {
         display: flex;
@@ -27,12 +61,18 @@
         align-items: center;
         margin: 0 2rem;
 
+        &:first-child {
+          .navbar-link__picture {
+            border: transparent;
+          }
+        }
+
         &__picture {
           display: flex;
           justify-content: center;
           align-items: center;
-          height: 60px;
           border: 2px solid rgb(143, 143, 143);
+          height: 60px;
           width: 60px;
           background-color: white;
           border-radius: 50%;
@@ -49,9 +89,10 @@
           text-transform: uppercase;
           font-weight: bold;
           font-size: 0.7rem;
+          color: rgb(143, 143, 143);
           letter-spacing: 1px;
           line-height: 0.7rem;
-          margin-top: 6px;
+          margin-top: 12px;
         }
       }
 
@@ -63,6 +104,10 @@
 
           &__picture {
             border: 2px solid #e077a7;
+          }
+
+          &__text {
+            color: black;
           }
         }
       }
