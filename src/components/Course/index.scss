@@ -1,14 +1,11 @@
 @use '../../styles/variables' as v;
 
 .container {
-  position: absolute;
-  top: -8.5rem;
+  top: -9.5rem;
 
   .course {
     border-radius: 0 0 0 6rem;
-    color: white;
     padding: 8.5rem 3.5rem 2rem 3.5rem;
-    width: 100%;
 
     &.bg-pink {
       background-color: #e077a7;
@@ -42,57 +39,24 @@
 
     .course-header {
       &__date {
-        text-transform: uppercase;
         font-size: 0.8rem;
-        font-weight: 200;
       }
 
       &__title {
-        font-weight: bold;
-        height: 60px;
-        display: flex;
-        align-items: center;
         font-size: 1.5rem;
         line-height: 1.8rem;
       }
     }
 
     .course-entrants {
-      margin-top: 1.5rem;
-      display: flex;
-      align-items: center;
-      height: 40px;
-
       .entrants-pictures {
-        color: red;
-        display: flex;
-        position: relative;
-        width: 65px;
-        height: 40px;
-
         img {
-          position: absolute;
-          height: 35px;
-          width: 35px;
-          border-radius: 50%;
           border: 3px solid white;
-
-          &:first-child {
-            z-index: 10;
-          }
-
-          &:nth-child(2) {
-            z-index: 5;
-            left: 18px;
-          }
         }
       }
 
       p {
-        font-style: italic;
-        font-weight: 200;
         font-size: 0.8rem;
-        letter-spacing: 0.5px;
       }
     }
   }
