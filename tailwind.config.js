@@ -13,6 +13,7 @@ export default {
         darkblue: '#082343',
         lightgrey: '#e1e1e1',
         grey: '#a1a0a0',
+        greyvariant: '#9fa4bd',
         lightblack: '#2f2f2f',
       },
 
@@ -26,6 +27,9 @@ export default {
         custom: '-9.5rem',
         inherit: 'inherit',
       },
+      right: {
+        inherit: 'inherit',
+      },
       height: {
         header: '8.5rem',
       },
@@ -36,6 +40,13 @@ export default {
             lineHeight: '1rem',
             letterSpacing: '0.02em',
             fontWeight: 'bold',
+          },
+        ],
+        xxs: [
+          '0.7rem',
+          {
+            letterSpacing: '0.05em',
+            lineHeight: '0.7rem',
           },
         ],
         date: [

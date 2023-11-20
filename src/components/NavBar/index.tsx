@@ -25,7 +25,7 @@ function NavBar() {
 
   const addClasses = (icon: JSX.Element) => {
     const iconWithClasses = React.cloneElement(icon, {
-      className: `w-6 h-6 text-grey react-icons navbar-link__icon`,
+      className: `w-6 h-6 text-greyvariant react-icons navbar-link__icon`,
     });
     return iconWithClasses;
   };
@@ -54,8 +54,8 @@ function NavBar() {
 
   return (
     <header
-      className={`header relative z-40 pt-9 md:pt-0 md:h-20 md:w-full shadow ${
-        isOpen ? 'header--open' : ''
+      className={`relative z-40 pt-9 md:pt-0 md:h-20 md:w-full shadow ${
+        isOpen ? 'header--open' : 'header'
       }`}
     >
       <div className="header-menu h-header overflow-y-scroll relative md:h-full md:overflow-y-hidden md:flex md:justify-end md:bg-white">
@@ -63,10 +63,19 @@ function NavBar() {
           {navbarLinks.map((link, index) => (
             <li
               key={link.text}
-              className={`navbar-link flex flex-col items-center mx-5 ${
+              className={`navbar-link flex flex-col items-center mx-5 relative ${
                 isActive === index ? 'active' : ''
               }`}
             >
+              {index === 0 && (
+                <div
+                  className={`absolute z-20 text-xxs px-2 py-1.5 rounded-full -top-1 -right-2.5 text-white md:-left-3 md:-top-2 md:right-inherit ${
+                    isActive === 0 ? 'bg-pink' : 'bg-greyvariant'
+                  }`}
+                >
+                  12
+                </div>
+              )}
               <a
                 href={`#${link.text}`}
                 className="flex flex-col justify-center items-center md:flex-row relative text-grey hover:text-pink"
@@ -94,8 +103,8 @@ function NavBar() {
         )}
       </div>
       <div
-        className={`open-icon w-full z-40 absolute bottom-2 md:hidden ${
-          isOpen ? 'hidden' : ''
+        className={`w-full z-40 absolute bottom-2 md:hidden ${
+          isOpen ? 'hidden' : 'open-icon'
         }`}
       >
         <button

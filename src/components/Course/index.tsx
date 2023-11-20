@@ -4,6 +4,7 @@ import {
   GiMicrophone,
   GiMaterialsScience,
   GiPhotoCamera,
+  GiBackup,
 } from 'react-icons/gi';
 import { CourseT } from '../../@types';
 import './index.scss';
@@ -36,7 +37,7 @@ function Course({ course, topOffset }: CourseProps) {
       IconComponent = GiPhotoCamera;
       break;
     default:
-      IconComponent = null;
+      IconComponent = GiBackup;
   }
 
   return (
