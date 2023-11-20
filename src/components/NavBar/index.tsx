@@ -54,12 +54,12 @@ function NavBar() {
 
   return (
     <header
-      className={`header relative z-40 pt-9 md:pt-0 md:h-20 ${
+      className={`header relative z-40 pt-9 md:pt-0 md:h-20 md:w-full shadow ${
         isOpen ? 'header--open' : ''
       }`}
     >
-      <div className="header-menu h-header overflow-y-scroll relative md:h-full md:overflow-y-hidden">
-        <ul className="navbar flex flex-row justify-evenly items-center h-full px-12 bg-white absolute rounded-custom md:w-full md:p-3">
+      <div className="header-menu h-header overflow-y-scroll relative md:h-full md:overflow-y-hidden md:flex md:justify-end md:bg-white">
+        <ul className="navbar flex flex-row justify-evenly items-center h-full px-12 bg-white absolute rounded-custom md:p-3">
           {navbarLinks.map((link, index) => (
             <li
               key={link.text}
@@ -67,18 +67,18 @@ function NavBar() {
                 isActive === index ? 'active' : ''
               }`}
             >
-              <button
-                type="button"
-                className="flex flex-col justify-center items-center"
+              <a
+                href={`#${link.text}`}
+                className="flex flex-col justify-center items-center md:flex-row relative text-grey hover:text-pink"
                 onClick={() => handleClickMenu(index)}
               >
-                <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-grey">
+                <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-grey md:hidden md:h-9 md:w-9 md:mr-4">
                   {link.icon}
                 </div>
-                <h2 className="navbar-link__text uppercase mt-1.5 text-header text-grey">
+                <h2 className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative">
                   {link.text}
                 </h2>
-              </button>
+              </a>
             </li>
           ))}
         </ul>

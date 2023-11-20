@@ -12,10 +12,12 @@ function Course({ course, topOffset }: CourseProps) {
 
   return (
     <li
-      className={`course rounded-custom p-custom text-white w-full bg-${course.color} md:relative md:h-80 md:py-0 md:flex md:flex-col md:items-center md:justify-center md:gap-8 md:cursor-pointer`}
+      className={`course rounded-custom p-custom text-white w-full bg-${course.color} md:relative md:h-80 md:py-0 md:flex md:flex-col md:items-center md:justify-center md:gap-8 md:cursor-pointer md:shadow-md md:hover:shadow-lg md:border-4 md:border-white md:hover:border-8 md:rounded md:hover:rounded-custom md:hover:transition-all md:transition-all`}
       style={{ top, zIndex }}
     >
-      <p className="uppercase font-extralight text-date">{course.date}</p>
+      <p className="uppercase font-extralight text-date md:font-normal">
+        {course.date}
+      </p>
 
       <h3 className="font-bold h-16 flex items-center text-2xl md:text-center">
         {course.title}

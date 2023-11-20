@@ -2,8 +2,11 @@
   .navbar {
     .navbar-link {
       &:first-child {
-        .navbar-link__picture {
-          border: transparent;
+        .navbar-link {
+          &__image {
+            border: transparent;
+            display: block !important;
+          }
         }
       }
 
@@ -12,13 +15,24 @@
           &__image {
             border-color: #e077a7;
           }
-          
+
           &__icon {
             color: black;
           }
 
           &__text {
             color: black;
+
+            &::after {
+              content: '';
+              display: block;
+              width: 100%;
+              height: 2px;
+              background-color: #e077a7;
+              position: absolute;
+              bottom: -5px;
+              right: 0;
+            }
           }
         }
       }
@@ -51,7 +65,7 @@
 
           &.active {
             .navbar-link {
-              &__picture {
+              &__image {
                 height: 80px;
                 width: 80px;
               }
