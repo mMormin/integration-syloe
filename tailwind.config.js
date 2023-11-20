@@ -11,7 +11,8 @@ export default {
         darkgreen: '#1a3d04',
         blue: '#4161e9',
         darkblue: '#082343',
-        grey: '#8f8f8f',
+        lightgrey: '#e1e1e1',
+        grey: '#a1a0a0',
       },
 
       borderRadius: {

@@ -72,7 +72,7 @@ function NavBar() {
                 className="flex flex-col justify-center items-center md:flex-row relative text-grey hover:text-pink"
                 onClick={() => handleClickMenu(index)}
               >
-                <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-grey md:hidden md:h-9 md:w-9 md:mr-4">
+                <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-lightgrey md:hidden md:h-9 md:w-9 md:mr-4">
                   {link.icon}
                 </div>
                 <h2 className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative">
