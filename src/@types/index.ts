@@ -1,4 +1,4 @@
-export interface CourseT {
+export type CourseT = {
   id: number;
   date: string;
   title: string;
@@ -6,9 +6,14 @@ export interface CourseT {
   color: string;
   thumbnail: string;
   entrants: EntrantsT[];
-}
+};
 
-export interface EntrantsT {
+export type EntrantsT = {
   id: number;
   name: string;
-}
+};
+
+export type NavbarLinkT = {
+  icon: JSX.Element;
+  text: string;
+};

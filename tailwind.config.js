@@ -11,6 +11,17 @@ export default {
         darkgreen: '#1a3d04',
         blue: '#4161e9',
         darkblue: '#082343',
+        grey: '#8f8f8f',
+      },
+
+      borderRadius: {
+        custom: '0 0 0 6rem',
+      },
+      padding: {
+        custom: '8.5rem 3.5rem 2rem 3.5rem',
+      },
+      inset: {
+        custom: '-9.5rem',
       },
     },
   },

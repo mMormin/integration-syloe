@@ -3,7 +3,7 @@ import courses from '../../data';
 
 function CoursesList() {
   return (
-    <ul className="container absolute">
+    <ul className="container absolute top-custom">
       {courses.map((course, index) => (
         <Course key={course.id} course={course} topOffset={index + 1} />
       ))}

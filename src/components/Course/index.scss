@@ -1,63 +1,31 @@
-@use '../../styles/variables' as v;
+.course {
+  &.bg-pink {
+    background-color: #e077a7;
+  }
+  &.bg-purple {
+    background-color: #9351b1;
+  }
+  &.bg-darkpurple {
+    background-color: #271134;
+  }
+  &.bg-green {
+    background-color: #2c750c;
+  }
+  &.bg-darkgreen {
+    background-color: #1a3d04;
+  }
+  &.bg-blue {
+    background-color: #4161e9;
+  }
+  &.bg-darkblue {
+    background-color: #082343;
+  }
 
-.container {
-  top: -9.5rem;
+  &:first-child {
+    position: relative;
+  }
 
-  .course {
-    border-radius: 0 0 0 6rem;
-    padding: 8.5rem 3.5rem 2rem 3.5rem;
-
-    &.bg-pink {
-      background-color: #e077a7;
-    }
-    &.bg-purple {
-      background-color: #9351b1;
-    }
-    &.bg-darkpurple {
-      background-color: #271134;
-    }
-    &.bg-green {
-      background-color: #2c750c;
-    }
-    &.bg-darkgreen {
-      background-color: #1a3d04;
-    }
-    &.bg-blue {
-      background-color: #4161e9;
-    }
-    &.bg-darkblue {
-      background-color: #082343;
-    }
-
-    &:first-child {
-      position: relative;
-    }
-
-    &:not(:first-child) {
-      position: absolute;
-    }
-
-    .course-header {
-      &__date {
-        font-size: 0.8rem;
-      }
-
-      &__title {
-        font-size: 1.5rem;
-        line-height: 1.8rem;
-      }
-    }
-
-    .course-entrants {
-      .entrants-pictures {
-        img {
-          border: 3px solid white;
-        }
-      }
-
-      p {
-        font-size: 0.8rem;
-      }
-    }
+  &:not(:first-child) {
+    position: absolute;
   }
 }

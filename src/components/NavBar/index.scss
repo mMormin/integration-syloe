@@ -1,34 +1,13 @@
-@use '../../styles/variables' as v;
-
 .header {
-  .header-menu {
-    .navbar {
-      border-radius: 0 0 0 6rem;
-
-      .navbar-link {
-        &:first-child {
-          .navbar-link__picture {
-            border: transparent;
-          }
-        }
-
-        &__picture {
-          border: 2px solid rgb(143, 143, 143);
-        }
-
-        &__icon {
-          color: rgb(143, 143, 143);
-        }
-
-        &__text {
-          font-size: 0.7rem;
-          color: rgb(143, 143, 143);
-
-          line-height: 0.7rem;
+  .navbar {
+    .navbar-link {
+      &:first-child {
+        .navbar-link__picture {
+          border: transparent;
         }
       }
 
-      .active {
+      &.active {
         .navbar-link {
           &__icon {
             color: black;

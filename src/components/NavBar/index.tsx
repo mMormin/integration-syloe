@@ -8,11 +8,7 @@ import {
 } from 'react-icons/bs';
 import './index.scss';
 import { useEffect, useState } from 'react';
-
-type NavbarLink = {
-  icon: JSX.Element;
-  text: string;
-};
+import { NavbarLinkT } from '../../@types';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -22,27 +18,24 @@ function NavBar() {
     setIsOpen(!isOpen);
   };
 
-  const navbarLinks: NavbarLink[] = [
-    {
-      icon: <img src="https://i.pravatar.cc/300" alt="" />,
-      text: 'you',
-    },
-    {
-      icon: <BsArrowUpRight className="navbar-link__icon w-6 h-6" />,
-      text: 'trending',
-    },
-    {
-      icon: <BsFillHeartFill className="navbar-link__icon w-6 h-6" />,
-      text: 'health',
-    },
-    {
-      icon: <BsHeadphones className="navbar-link__icon w-6 h-6" />,
-      text: 'music',
-    },
-    {
-      icon: <BsFillTrophyFill className="navbar-link__icon w-6 h-6" />,
-      text: 'reward',
-    },
+  const createNavbarLink = (icon: JSX.Element, text: string): NavbarLinkT => ({
+    icon,
+    text,
+  });
+
+  const createIconWithClasses = (icon: JSX.Element): JSX.Element => (
+    <div className="navbar-link__icon w-6 h-6 text-grey">{icon}</div>
+  );
+
+  const navbarLinks: NavbarLinkT[] = [
+    createNavbarLink(
+      <img src="https://i.pravatar.cc/300" alt="profil" />,
+      'you'
+    ),
+    createNavbarLink(createIconWithClasses(<BsArrowUpRight />), 'trending'),
+    createNavbarLink(createIconWithClasses(<BsFillHeartFill />), 'health'),
+    createNavbarLink(createIconWithClasses(<BsHeadphones />), 'music'),
+    createNavbarLink(createIconWithClasses(<BsFillTrophyFill />), 'reward'),
   ];
 
   const handleClickMenu = (index: number) => {
@@ -61,7 +54,7 @@ function NavBar() {
       className={`header relative z-40 pt-10 ${isOpen ? 'header--open' : ''}`}
     >
       <div className="header-menu h-32 overflow-y-scroll relative">
-        <ul className="navbar flex flex-row justify-evenly items-start h-full pt-3 px-2 bg-white absolute">
+        <ul className="navbar flex flex-row justify-evenly items-start h-full pt-3 px-2 bg-white absolute rounded-custom">
           {navbarLinks.map((link, index) => (
             <li
               key={link.text}
@@ -74,10 +67,10 @@ function NavBar() {
                 className="flex flex-col justify-center items-center"
                 onClick={() => handleClickMenu(index)}
               >
-                <div className="navbar-link__picture flex justify-center items-center h-14 w-14 overflow-hidden rounded-full">
+                <div className="navbar-link__picture flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-grey">
                   {link.icon}
                 </div>
-                <h2 className="navbar-link__text uppercase font-bold tracking-wider mt-3">
+                <h2 className="navbar-link__text uppercase font-bold tracking-wider mt-3 text-xs text-grey">
                   {link.text}
                 </h2>
               </button>
