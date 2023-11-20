@@ -33,6 +33,9 @@ export default {
       height: {
         header: '8.5rem',
       },
+      width: {
+        header: '768px',
+      },
       fontSize: {
         header: [
           '0.7rem',
@@ -46,7 +49,7 @@ export default {
           '0.7rem',
           {
             letterSpacing: '0.05em',
-            lineHeight: '0.7rem',
+            lineHeight: '0.5rem',
           },
         ],
         date: [

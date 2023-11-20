@@ -12,7 +12,7 @@ import './index.scss';
 
 function NavBar() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isActive, setIsActive] = useState<number>(1);
+  const [isActive, setIsActive] = useState<number | null>(1);
 
   const handleToggleMenu = () => {
     setIsOpen(!isOpen);
@@ -42,7 +42,7 @@ function NavBar() {
   ];
 
   const handleClickMenu = (index: number) => {
-    setIsActive(index === isActive ? 1 : index);
+    setIsActive(index === isActive ? null : index);
   };
 
   useEffect(() => {
@@ -54,12 +54,12 @@ function NavBar() {
 
   return (
     <header
-      className={`relative z-40 pt-9 md:pt-0 md:h-20 md:w-full shadow ${
+      className={`relative z-40 pt-9 md:pt-0 md:h-20 md:w-full shadow-none md:shadow ${
         isOpen ? 'header--open' : 'header'
       }`}
     >
       <div className="header-menu h-header overflow-y-scroll relative md:h-full md:overflow-y-hidden md:flex md:justify-end md:bg-white">
-        <ul className="navbar flex flex-row justify-evenly items-center h-full px-12 bg-white absolute rounded-custom md:p-3">
+        <ul className="navbar flex flex-row justify-evenly items-center h-full px-12 bg-white absolute rounded-custom md:p-3 w-header md:w-auto">
           {navbarLinks.map((link, index) => (
             <li
               key={link.text}
@@ -69,7 +69,7 @@ function NavBar() {
             >
               {index === 0 && (
                 <div
-                  className={`absolute z-20 text-xxs px-2 py-1.5 rounded-full -top-1 -right-2.5 text-white md:-left-3 md:-top-2 md:right-inherit ${
+                  className={`notifications absolute z-20 text-xxs px-2 py-1.5 rounded-full -top-1 -right-2.5 text-white md:-left-3 md:-top-2 md:right-inherit ${
                     isActive === 0 ? 'bg-pink' : 'bg-greyvariant'
                   }`}
                 >
@@ -84,7 +84,7 @@ function NavBar() {
                 <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-lightgrey md:hidden md:h-9 md:w-9 md:mr-4">
                   {link.icon}
                 </div>
-                <h2 className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative">
+                <h2 className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative text-grey">
                   {link.text}
                 </h2>
               </a>
@@ -92,6 +92,7 @@ function NavBar() {
           ))}
         </ul>
 
+        {/* Cross Arrow */}
         {isOpen && (
           <button
             type="button"
@@ -102,6 +103,8 @@ function NavBar() {
           </button>
         )}
       </div>
+
+      {/* Down Arrow */}
       <div
         className={`w-full z-40 absolute bottom-2 md:hidden ${
           isOpen ? 'hidden' : 'open-icon'
