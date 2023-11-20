@@ -18,10 +18,30 @@ export default {
         custom: '0 0 0 6rem',
       },
       padding: {
-        custom: '8.5rem 3.5rem 2rem 3.5rem',
+        custom: '8.5rem 2.5rem 3rem 2.5rem',
       },
       inset: {
         custom: '-9.5rem',
+        inherit: 'inherit',
+      },
+      height: {
+        header: '8.5rem',
+      },
+      fontSize: {
+        header: [
+          '0.7rem',
+          {
+            lineHeight: '1rem',
+            letterSpacing: '0.02em',
+            fontWeight: 'bold',
+          },
+        ],
+        date: [
+          '0.75rem',
+          {
+            lineHeight: '1.7rem',
+          },
+        ],
       },
     },
   },

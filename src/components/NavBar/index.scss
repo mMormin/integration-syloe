@@ -9,12 +9,12 @@
 
       &.active {
         .navbar-link {
+          &__image {
+            border-color: #e077a7;
+          }
+          
           &__icon {
             color: black;
-          }
-
-          &__picture {
-            border: 2px solid #e077a7;
           }
 
           &__text {

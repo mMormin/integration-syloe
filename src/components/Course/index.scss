@@ -29,3 +29,14 @@
     position: absolute;
   }
 }
+
+@media (min-width: 768px) {
+  .course {
+    z-index: inherit !important;
+    top: inherit !important;
+
+    &:not(:first-child) {
+      position: relative;
+    }
+  }
+}

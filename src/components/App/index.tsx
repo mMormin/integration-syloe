@@ -5,7 +5,7 @@ import './index.scss';
 
 function App() {
   return (
-    <div className="app">
+    <div className="app md:flex md:flex-col md:h-screen">
       <StatusBar />
       <NavBar />
       <CoursesList />
