@@ -2,6 +2,7 @@ export type CourseT = {
   id: number;
   date: string;
   title: string;
+  iconName: string;
   slug: string;
   color: string;
   thumbnail: string;

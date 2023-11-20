@@ -3,6 +3,7 @@ export default [
     id: 12345,
     date: 'today 5:30 PM',
     title: 'Yoga and Meditation for Beginners',
+    iconName: 'GiMeditation',
     slug: 'yoga-meditation-for-beginners',
     color: 'pink',
     thumbnail:
@@ -54,6 +55,7 @@ export default [
     id: 67891,
     date: 'monday 4:30 PM',
     title: 'Practice French, English and Chinese',
+    iconName: 'GiBookshelf',
     slug: 'practice-french-english-chinese',
     color: 'purple',
     thumbnail:
@@ -105,6 +107,7 @@ export default [
     id: 11121,
     date: 'tuesday 6:00 PM',
     title: 'Adobe XD Live Event in Europe',
+    iconName: 'GiMicrophone',
     slug: 'adobe-XD-live-event_europe',
     color: 'darkpurple',
     thumbnail:
@@ -156,6 +159,7 @@ export default [
     id: 11123,
     date: 'friday 6:30 PM',
     title: 'Data Science Fundamentals',
+    iconName: 'GiMaterialsScience',
     slug: 'data-science-fundamentals',
     color: 'green',
     thumbnail:
@@ -207,6 +211,7 @@ export default [
     id: 17876,
     date: 'thursday 6:30 PM',
     title: 'Photography Masterclass',
+    iconName: 'GiPhotoCamera',
     slug: 'photography-masterclass',
     color: 'darkgreen',
     thumbnail:
