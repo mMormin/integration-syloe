@@ -9,6 +9,24 @@ Intégration d'une maquette en mobile first.
 - TailwindCSS
 - react-icons
 
+<br />
+
+## Setup
+
+Install dependencies
+
+```bash
+  yarn dev
+```
+
+Launch project
+
+```bash
+  cd integreation-syloe
+  yarn
+```
+
+<br />
 
 ## Rendu
 Mobile
