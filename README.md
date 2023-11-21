@@ -2,6 +2,7 @@
 
 Intégration d'une maquette en mobile first.
 
+<br />
 
 ## Dependencies
 - React + react-dom
