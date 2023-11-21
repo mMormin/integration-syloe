@@ -17,14 +17,14 @@ Intégration d'une maquette en mobile first.
 Install dependencies
 
 ```bash
-  yarn dev
+  cd /integration-syloe
+  yarn
 ```
 
 Launch project
 
 ```bash
-  cd integreation-syloe
-  yarn
+  yarn dev
 ```
 
 <br />
