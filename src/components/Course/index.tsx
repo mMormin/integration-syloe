@@ -15,11 +15,13 @@ type CourseProps = {
 };
 
 function Course({ course, topOffset }: CourseProps) {
+  // Calculating styles for course position
   const top = `calc(14rem * ${topOffset})`;
   const zIndex = `calc(10 - ${topOffset})`;
 
   let IconComponent;
 
+  // Switch statement to assign IconComponent based on the iconName in the course object
   switch (course.iconName) {
     case 'GiMeditation':
       IconComponent = GiMeditation;
@@ -48,14 +50,17 @@ function Course({ course, topOffset }: CourseProps) {
         zIndex,
       }}
     >
+      {/* Course date */}
       <p className="uppercase font-extralight text-date md:font-normal">
         {course.date}
       </p>
 
+      {/* Course title */}
       <h3 className="font-bold h-16 flex items-center text-2xl md:text-center">
         {course.title}
       </h3>
 
+      {/* Participant avatars and names */}
       <div className="mt-4 flex items-center h-10 md:self-start">
         <div className="relative flex w-14 h-9">
           <img
@@ -75,6 +80,7 @@ function Course({ course, topOffset }: CourseProps) {
         </p>
       </div>
 
+      {/* Selected IconComponent */}
       {IconComponent && (
         <IconComponent
           size={90}

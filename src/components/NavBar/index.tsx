@@ -11,18 +11,16 @@ import { NavbarLinkT } from '../../@types';
 import './index.scss';
 
 function NavBar() {
+  // To manage menu open/close and active navbar link
   const [isOpen, setIsOpen] = useState(false);
   const [isActive, setIsActive] = useState<number | null>(1);
-
-  const handleToggleMenu = () => {
-    setIsOpen(!isOpen);
-  };
 
   const createNavbarLink = (icon: JSX.Element, text: string): NavbarLinkT => ({
     icon,
     text,
   });
 
+  // Function to add the classes to the icons
   const addClasses = (icon: JSX.Element) => {
     const iconWithClasses = React.cloneElement(icon, {
       className: `w-6 h-6 text-greyvariant react-icons navbar-link__icon`,
@@ -30,6 +28,7 @@ function NavBar() {
     return iconWithClasses;
   };
 
+  // Array to associate the wanted icon and text
   const navbarLinks: NavbarLinkT[] = [
     createNavbarLink(
       <img src="https://i.pravatar.cc/300" alt="profil" />,
@@ -41,16 +40,22 @@ function NavBar() {
     createNavbarLink(addClasses(<BsFillTrophyFill />), 'reward'),
   ];
 
-  const handleClickMenu = (index: number) => {
-    setIsActive(index === isActive ? null : index);
-  };
-
+  // To manage body overflow based on menu open/close
   useEffect(() => {
     const bodyElement = document.querySelector('body');
     if (bodyElement) {
       bodyElement.style.overflow = isOpen ? 'hidden' : 'auto';
     }
   }, [isOpen]);
+
+  // Clicks handlders
+  const handleToggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  const handleClickMenu = (index: number) => {
+    setIsActive(index === isActive ? null : index);
+  };
 
   return (
     <header
@@ -59,6 +64,7 @@ function NavBar() {
       }`}
     >
       <div className="header-menu h-header overflow-y-scroll relative md:h-full md:overflow-y-hidden md:flex md:justify-end md:bg-white">
+        {/* Narbar */}
         <ul className="navbar flex flex-row justify-evenly items-center h-full px-12 bg-white absolute rounded-custom md:p-3 w-header md:w-auto">
           {navbarLinks.map((link, index) => (
             <li
@@ -67,6 +73,7 @@ function NavBar() {
                 isActive === index ? 'active' : ''
               }`}
             >
+              {/* Notifications count */}
               {index === 0 && (
                 <div
                   className={`notifications absolute z-20 text-xxs px-2 py-1.5 rounded-full -top-1 -right-2.5 text-white md:-left-3 md:-top-2 md:right-inherit ${
@@ -76,6 +83,8 @@ function NavBar() {
                   12
                 </div>
               )}
+
+              {/* Navbar Link */}
               <a
                 href={`#${link.text}`}
                 className="flex flex-col justify-center items-center md:flex-row relative text-grey hover:text-pink"
