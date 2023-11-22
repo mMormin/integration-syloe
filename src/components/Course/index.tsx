@@ -56,9 +56,9 @@ function Course({ course, topOffset }: CourseProps) {
       </p>
 
       {/* Course title */}
-      <h3 className="font-bold h-16 flex items-center text-2xl md:text-center">
+      <h2 className="font-bold h-16 flex items-center text-2xl md:text-center mr-4 md:mr-0'">
         {course.title}
-      </h3>
+      </h2>
 
       {/* Participant avatars and names */}
       <div className="mt-4 flex items-center h-10 md:self-start">

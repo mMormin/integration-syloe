@@ -93,9 +93,9 @@ function NavBar() {
                 <div className="navbar-link__image flex justify-center items-center h-14 w-14 overflow-hidden rounded-full border-2 border-lightgrey md:hidden md:h-9 md:w-9 md:mr-4">
                   {link.icon}
                 </div>
-                <h2 className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative text-grey">
+                <p className="navbar-link__text uppercase mt-1.5 text-header md:mt-0 md:relative text-grey">
                   {link.text}
-                </h2>
+                </p>
               </a>
             </li>
           ))}

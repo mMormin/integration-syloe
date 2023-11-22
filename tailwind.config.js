@@ -34,7 +34,7 @@ export default {
         header: '8.5rem',
       },
       width: {
-        header: '768px',
+        header: '151%',
       },
       fontSize: {
         header: [
