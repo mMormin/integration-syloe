@@ -56,7 +56,7 @@ function Course({ course, topOffset }: CourseProps) {
       </p>
 
       {/* Course title */}
-      <h2 className="font-bold h-16 flex items-center text-2xl md:text-center mr-4 md:mr-0'">
+      <h2 className="font-bold h-16 flex items-center text-2xl md:text-center">
         {course.title}
       </h2>
 
